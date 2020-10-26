@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Кнопка</title>
+    <style>
+        .search-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .close-ico {
+            position: absolute;
+            right: 5px;
+            top: 3px;
+        }
+    </style>
+</head>
+<body>
+<h1>Найдутся все...</h1>
+<div class="search-container">
+    <input id="search-field" type="text" placeholder="поиск..."/>
+    <img id="close-ico" src="x.png" width="20" alt=""/>
+</div>
+
+<h2>Список продуктов для драников</h2>
+<ul>
+    <li>Картошечка</li>
+    <li>Сметанка</li>
+    <li>Яйца</li>
+    <li>Соль</li>
+    <li>Масло</li>
+    <li>Мука</li>
+</ul>
+</body>
+
+<script>
+    let elem = document.querySelectorAll(" ul li");
+    for (let i = 0; i < elem.length; i++) {
+        elem[i].onclick = function () {
+            this.classList.add("active");
+        }
+    }
+    document.getElementById("close-ico").onclick = function (){
+        document.getElementById("search-field").value = ""
+    }
+</script>
+</html>
